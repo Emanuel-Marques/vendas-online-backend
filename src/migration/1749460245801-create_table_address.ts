@@ -1,6 +1,6 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
-export class CreateTableAddress1749458060325 implements MigrationInterface {
+export class CreateTableAddress1749460245801 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     queryRunner.query(`
             CREATE TABLE public.address (
@@ -13,7 +13,7 @@ export class CreateTableAddress1749458060325 implements MigrationInterface {
                 created_at timestamp without time zone DEFAULT now() NOT NULL,
                 updated_at timestamp without time zone DEFAULT now() NOT NULL,
                 primary key (id),
-                foreign key (user_id) references public.user(id),
+                foreign key (user_id) references public.users(id),
                 foreign key (city_id) references public.city(id)
             );
             
